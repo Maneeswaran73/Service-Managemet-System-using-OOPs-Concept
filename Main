@@ -1,0 +1,25 @@
+public class Main {
+    public static void main(String[] args) {
+
+        // Using polymorphism - parent reference, child object
+        Vehicle car = new Car("Hyundai", "i20", 850000, 4);
+        Vehicle bike = new Bike("Yamaha", "R15", 170000, true);
+
+        // Display information
+        car.displayInfo();
+        car.start();  // calling method from parent class
+
+        System.out.println();
+
+        bike.displayInfo();
+        bike.start();
+
+        System.out.println("\n--- Performing Services ---");
+        // Typecasting to access interface methods
+        ((Service) car).performService();
+        ((Service) bike).performService();
+
+        System.out.println("\n--- Method Overloading Example ---");
+        ((Car) car).start("Eco");
+    }
+}
